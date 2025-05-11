@@ -2,8 +2,14 @@ import { select, Separator } from '@inquirer/prompts'
 import { viewController } from '../controller/view.controller.js'
 import { quit } from '../items/quit.js'
 import { nav } from '../enums/navigation.enum.js'
+import { addCollection, getCollections } from '../../config/db.config.js'
 
 export const MenuView = async() => {
+
+
+    console.log('collections:', await getCollections())
+    console.log('adding collections:', await addCollection('WRS', 'C:/Projects'))
+    console.log('collections:', await getCollections())
     const option = await select({
         message: 'MAIN MENU',
         pageSize: 20,

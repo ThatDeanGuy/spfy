@@ -8,6 +8,7 @@ import { addVariable } from '../view/Settings/Environment-Variables/Add-Variable
 import { AiView } from '../view/AI/ai.view.js'
 import { ChatView } from '../view/AI/Chat/chat.view.js'
 import { listVariable } from '../view/Settings/Environment-Variables/List-Variables/listVariables.view.js'
+import { InitialSetupView } from '../../config/setup/view/initialSetup.view.js'
 
 export const viewController = (command) => {
     switch (command) {
@@ -34,6 +35,11 @@ export const viewController = (command) => {
             return addVariable()
         case nav.settings.environment.LIST:
             return listVariable()
+
+        // config
+        case nav.CONFIG.setup.INITIAL:
+            return InitialSetupView()
+
         // System
         case system.QUIT:
             process.exit(0)

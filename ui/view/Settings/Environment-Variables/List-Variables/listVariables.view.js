@@ -1,5 +1,5 @@
 import { select, Separator } from '@inquirer/prompts'
-import { readAll } from '../../../../../db/db.config.js'
+import { readAll } from '../../../../../config/db.config.js'
 import { nav } from '../../../../enums/navigation.enum.js'
 import { options } from '../../../../items/options.js'
 import { viewController } from '../../../../controller/view.controller.js'

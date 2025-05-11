@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack:global": "npm pack --omit=dev && npm install -g %cd%\\spfy-1.0.0.tgz"
   },
   "bin": {
     "spfy": "app.js"
@@ -14,15 +15,16 @@
   "description": "",
   "type": "module",
   "devDependencies": {
-    "@types/node": "^22.14.1",
-    "globals": "^16.0.0"
+    "@types/node": "22.14.1",
+    "eslint": "9.26.0",
+    "globals": "16.0.0"
   },
   "dependencies": {
-    "@inquirer/prompts": "^7.4.1",
-    "chokidar": "^4.0.3",
-    "commander": "^13.1.0",
-    "dotenv": "^16.5.0",
-    "openai": "^4.98.0",
-    "ora": "^8.2.0"
+    "@inquirer/prompts": "7.4.1",
+    "chalk": "5.4.1",
+    "chokidar": "4.0.3",
+    "commander": "13.1.0",
+    "openai": "4.98.0",
+    "ora": "8.2.0"
   }
 }

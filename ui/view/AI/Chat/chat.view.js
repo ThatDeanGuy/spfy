@@ -9,7 +9,7 @@ import OpenAI from 'openai'
 
 // Initialize the client
 const openai = new OpenAI({
-    apiKey: process.env.CHATGPT_API_KEY
+    apiKey: process.env.CHATGPT_API_KEY ?? ' '
 })
 
 function waitForEvent(spinner) {

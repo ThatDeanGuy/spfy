@@ -4,13 +4,19 @@ import { MenuView } from './ui/view/menu.view.js'
 import { AiView } from './ui/view/AI/ai.view.js'
 import { ChatView } from './ui/view/AI/Chat/chat.view.js'
 import { emitter } from './utils/emitter.util.js'
-require('dotenv').config();
+import { SetupView } from './config/setup/view/setup.view.js'
 const program = new Command()
 
 
 program
     .version('1.0.0')
     .description('Get started')
+
+program
+    .command('init')
+    .action(async() => {
+        await SetupView()
+    })
 
 program
     .command('go')

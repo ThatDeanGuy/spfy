@@ -1,5 +1,5 @@
 import { input, confirm, select, Separator } from '@inquirer/prompts'
-import { create } from '../../../../../db/db.config.js'
+import { create } from '../../../../../config/db.config.js'
 import { environmentVariablesView } from '../environment-variables.view.js'
 
 export const addVariable = async() => {

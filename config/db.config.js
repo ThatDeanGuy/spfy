@@ -4,11 +4,11 @@ import { dirname, resolve } from 'path'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-const DB_PATH = resolve(__dirname, 'db.json')
+const CONFIG_PATH = resolve(__dirname, 'config.json')
 
 async function readDB() {
     try {
-        const data = await readFile(DB_PATH, 'utf-8')
+        const data = await readFile(CONFIG_PATH, 'utf-8')
         return JSON.parse(data)
     } catch {
         return []
@@ -16,7 +16,19 @@ async function readDB() {
 }
 
 async function writeDB(data) {
-    await writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8')
+    await writeFile(CONFIG_PATH, JSON.stringify(data, null, 2), 'utf-8')
+}
+
+export const addCollection = async(name, path) => {
+    const db = await readDB()
+    db.settings.collections.push({ name, path })
+    await writeDB(db)
+    return true
+}
+
+export const getCollections = async() => {
+    const db = await readDB()
+    return db.settings.collections
 }
 
 export async function create(record) {

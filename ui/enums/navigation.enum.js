@@ -1,5 +1,6 @@
 import { settings } from './Settings/settings.enum.js'
 import { ai } from './AI/ai.enum.js'
+import { config } from './Settings/config.enum.js'
 
 export const nav = Object.freeze({
     MENU: 'menu',
@@ -10,5 +11,8 @@ export const nav = Object.freeze({
     WORKSPACE: 'workspace',
 
     SETTINGS: 'settings',
-    settings: settings
+    settings: settings,
+
+    CONFIG: config
+
 })
